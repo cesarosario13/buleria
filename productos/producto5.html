@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bulería clothing</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="../explorar.html">Explorar</a>
+            <a href="../carrito.html">Mi Carrito</a>
+            <a href="../contact.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+      <h1>Gorra Dilemma</h1>
+      <p>Gorra de 6 paneles con logo bordado al frente en dos combinaciones de color. Con un ajuste trasero en broche metálico.</p>
+      <img src="../assets/producto5bl.png" height="300" width="300" alt="Gorra Dilemma Azul">
+      <img src="../assets/producto5br.png" height="300" width="300" alt="Gorra Dilemma Marron">
+      <img src="../assets/producto5both.png" height="450" width="250" alt="Gorra Dilemma Ambas">
+    <p>Precio: $15.00</p>
+
+    <form id="form-agregar" onsubmit="agregarAlCarrito(event)">
+      <button type="submit">Agregar al Carrito</button>  
+    </form>
+</main>
+
+  <footer>
+    <p>&copy; 2025 bulería clothing. Todos los derechos reservados.</p>
+  </footer>
+
+        <script>  
+        function agregarAlCarrito(event) {
+            event.preventDefault();
+            const talla = document.getElementById('talla').value;
+            const precio = 15.00;
+            const producto = {
+                nombre: "Gorra Dilemma",
+                talla: talla,
+                precio: precio,
+            };
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push(producto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert("Producto agregado al carrito!");
+        }
+    </script>
+    
+</body>
+</html>

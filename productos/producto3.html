@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bulería clothing</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="../explorar.html">Explorar</a>
+            <a href="../carrito.html">Mi Carrito</a>
+            <a href="../contact.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+      <h1>Pantalón Asterisk</h1>
+      <p>Pantalón de corte recto con estampado de asteriscos en toda la prenda, un diseño atrevido que combina lo clásico con lo experimental.</p>
+      <img src="../assets/producto3.png" height="300" width="300" alt="Pantalón Asterisk">
+      <img src="../assets/producto3reverso.png" height="300" width="300" alt="Pantalón Asterisk Reverso">
+      <img src="../assets/producto3detalle.png" height="300" width="300" alt="Pantalón Asterisk en Detalle">
+    <p>Precio: $30.00</p>
+
+    <form id="form-agregar" onsubmit="agregarAlCarrito(event)">
+      <label for="talla">Selecciona tu talla:</label><br>
+      <select id="talla" name="talla" required>
+        <option value="">-- Elige tu talla --</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <br><br>
+      <button type="submit">Agregar al Carrito</button>
+    </form>
+
+    <p>GUÍA DE TALLAS</p>
+    <img src="../assets/PANTALON.svg" height="90" width="400" alt="Tallas">
+  </main>
+
+
+
+  <footer>
+    <p>&copy; 2025 bulería clothing. Todos los derechos reservados.</p>
+  </footer>
+
+        <script>  
+        function agregarAlCarrito(event) {
+            event.preventDefault();
+            const talla = document.getElementById('talla').value;
+            const precio = 30.00;
+            const producto = {
+                nombre: "Pantalón Asterisk",
+                talla: talla,
+                precio: precio,
+            };
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push(producto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert("Producto agregado al carrito!");
+        }
+    </script>
+    
+</body>
+</html>

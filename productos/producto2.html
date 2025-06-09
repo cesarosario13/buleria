@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bulería clothing</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="../explorar.html">Explorar</a>
+            <a href="../carrito.html">Mi Carrito</a>
+            <a href="../contact.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+      <h1>Franela Caution</h1>
+      <p>Cuidado te resbalas! Esta camiseta de algodón con un diseño muy único y un corte oversize te harán ver a la moda.</p>
+      <img src="../assets/producto2.png" height="300" width="300" alt="Franela Caution">
+      <img src="../assets/producto2reverso.png" height="300" width="300" alt="Franela Caution Reverso">
+    <p>Precio: $19.99</p>
+
+    <form id="form-agregar" onsubmit="agregarAlCarrito(event)">
+      <label for="talla">Selecciona tu talla:</label><br>
+      <select id="talla" name="talla" required>
+        <option value="">-- Elige tu talla --</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+      <br><br>
+      <button type="submit">Agregar al Carrito</button>
+    </form>
+
+    <p>GUÍA DE TALLAS</p>
+    <img src="../assets/tallas.png" height="90" width="400" alt="Tallas">
+  </main>
+
+
+
+  <footer>
+    <p>&copy; 2025 bulería clothing. Todos los derechos reservados.</p>
+  </footer>
+
+      <script>  
+        function agregarAlCarrito(event) {
+            event.preventDefault();
+            const talla = document.getElementById('talla').value;
+            const precio = 19.99;
+            const producto = {
+                nombre: "Franela Caution",
+                talla: talla,
+                precio: precio,
+            };
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.push(producto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert("Producto agregado al carrito!");
+        }
+    </script>
+
+</body>
+</html>

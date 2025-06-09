@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contacto</title>
+</head>
+<body>
+  <header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="explorar.html">Explorar</a>
+            <a href="carrito.html">Mi Carrito</a>
+            <a href="contact.html">Contacto</a>
+        </nav>
+    </header>
+  
+    <main>
+    <h1>Contáctanos</h1>
+    <p> Envíanos un mensaje con tus dudas!</p>
+
+    <form action="#" method="post">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" required></textarea>
+
+      <button onclick="Enviado()" type="submit">Enviar</button>
+  </main>
+  </form>
+
+  <script>
+    function Enviado(){
+      alert('¡Gracias por comunicarte! Tu mensaje ha sido enviado.');
+    }
+  </script>
+
+</body>
+</html>
