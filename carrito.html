@@ -6,7 +6,7 @@
     <title>Mi Carrito</title>
 </head>
 <body>
-    <header>
+    <header align="center">
         <nav>
             <a href="index.html">Inicio</a>
             <a href="explorar.html">Explorar</a>
@@ -16,7 +16,7 @@
     </header>
 
     <main>
-        <h1>Mi Carrito</h1>
+        <h1 align="center">Mi Carrito</h1>
         <div id="carrito"></div>
         <form action="#" method="post">
         <button onclick="Pedir()" type="submit">Hacer pedido</button>
@@ -43,7 +43,6 @@
                     <h2>${producto.nombre}</h2>
                     <p>Talla: ${producto.talla}</p>
                     <p>Precio: $${producto.precio.toFixed(2)}</p>
-                    <img src="${producto.imagen}" height="100" width="100" alt="${producto.nombre}">
                 `;
                 carritoContainer.appendChild(productoDiv);
             });
